@@ -1,0 +1,6 @@
+cisfun
+*.o
+*.s
+*.out
+c
+quote
