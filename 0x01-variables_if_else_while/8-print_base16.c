@@ -20,5 +20,5 @@ putchar(digit); /* Print letters a-f */
 }
 putchar('\n'); /* Print a new line after all hexadecimal digits */
 
-return 0;
+return(0);
 }
