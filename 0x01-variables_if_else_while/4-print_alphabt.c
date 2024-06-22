@@ -7,19 +7,19 @@
  */
 int main(void)
 {
-  char letter = 'a';
+char letter = 'a';
 
-  while (letter <= 'z')
-    {
-      /* Check if the current letter is not 'e' or 'q' */
-      if (letter != 'e' && letter != 'q')
-	{
-	  putchar(letter); /* Print the current letter */
+while (letter <= 'z')
+{
+/* Check if the current letter is not 'e' or 'q' */
+if (letter != 'e' && letter != 'q')
+{
+putchar(letter); /* Print the current letter */
 	}
-      letter++;
-    }
+letter++;
+}
 
-  putchar('\n'); /* Print a new line after the alphabets */
+putchar('\n'); /* Print a new line after the alphabets */
 
-  return 0;
+return 0;
 }

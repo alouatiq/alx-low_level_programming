@@ -7,19 +7,18 @@
  */
 int main(void)
 {
-  char digit;
+char digit;
 
-  for (digit = '0'; digit <= '9'; digit++)
-    {
-      putchar(digit); /* Print digits 0-9 */
-    }
+for (digit = '0'; digit <= '9'; digit++)
+{
+putchar(digit); /* Print digits 0-9 */
+}
 
-  for (digit = 'a'; digit <= 'f'; digit++)
-    {
-      putchar(digit); /* Print letters a-f */
-    }
+for (digit = 'a'; digit <= 'f'; digit++)
+{
+putchar(digit); /* Print letters a-f */
+}
+putchar('\n'); /* Print a new line after all hexadecimal digits */
 
-  putchar('\n'); /* Print a new line after all hexadecimal digits */
-
-  return 0;
+return 0;
 }

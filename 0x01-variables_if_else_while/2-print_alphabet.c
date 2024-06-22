@@ -7,14 +7,14 @@
  */
 int main(void)
 {
-  char letter = 'a';
+char letter = 'a';
 
-  while (letter <= 'z')
-    {
-      putchar(letter);
-      letter++;
-    }
-  putchar('\n'); /* Print a new line after the alphabet */
+while (letter <= 'z')
+{
+putchar(letter);
+letter++;
+}
+putchar('\n'); /* Print a new line after the alphabet */
 
-  return 0;
+return 0;
 }

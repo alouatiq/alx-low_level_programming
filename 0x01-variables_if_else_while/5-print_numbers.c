@@ -7,15 +7,14 @@
  */
 int main(void)
 {
-  char digit = '0';
+char digit = '0';
+while (digit <= '9')
+{
+putchar(digit); /* Print the current digit */
+digit++;
+}
 
-  while (digit <= '9')
-    {
-      putchar(digit); /* Print the current digit */
-      digit++;
-    }
+putchar('\n'); /* Print a new line after all digits */
 
-  putchar('\n'); /* Print a new line after all digits */
-
-  return 0;
+return 0;
 }
