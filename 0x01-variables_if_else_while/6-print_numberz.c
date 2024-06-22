@@ -18,5 +18,5 @@ digit++;
 
 putchar('\n'); /* Print a new line after all digits */
 
-return 0;
+return (0);
 }
