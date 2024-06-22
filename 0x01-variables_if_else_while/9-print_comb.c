@@ -22,5 +22,5 @@ putchar(' '); /* Print space after comma */
 
 putchar('\n'); /* Print a new line after all combinations */
 
-return 0;
+return(0);
 }
