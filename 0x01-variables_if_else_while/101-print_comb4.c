@@ -1,30 +1,26 @@
 #include <stdio.h>
 
-/**
- * main - Entry point, prints all possible different combinations of three digits
- *
- * Return: Always 0 (Success)
- */
 int main(void)
 {
-int hundreds, tens, units;
+  int i, j, k;
 
-for (hundreds = 0; hundreds <= 7; hundreds++)
-{
-for (tens = hundreds + 1; tens <= 8; tens++)
-for (units = tens + 1; units <= 9; units++)
-{
-putchar(hundreds + '0'); /* Print hundreds digit */
-putchar(tens + '0');     /* Print tens digit */
-putchar(units + '0');    /* Print units digit */
-if (!(hundreds == 7 && tens == 8 && units == 9))
-{
-putchar(','); /* Print comma after combination */
-putchar(' '); /* Print space after comma */
-}
-}
-}
-}
-putchar('\n'); /* Print a new line after all combinations */
-return (0);
+  for (i = 0; i < 10; i++)
+    {
+      for (j = i + 1; j < 10; j++)
+	{
+	  for (k = j + 1; k < 10; k++)
+	    {
+	      putchar(i + '0');
+	      putchar(j + '0');
+	      putchar(k + '0');
+	      if (i != 7 || j != 8 || k != 9)
+		{
+		  putchar(',');
+		  putchar(' ');
+		}
+	    }
+	}
+    }
+  putchar('\n');  /* Print a new line after all combinations */
+  return (0);
 }
