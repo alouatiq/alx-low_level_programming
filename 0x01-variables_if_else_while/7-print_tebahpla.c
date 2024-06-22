@@ -15,5 +15,5 @@ letter--;
 }
 
 putchar('\n'); /* Print a new line after all letters */
-return 0;
+return (0);
 }
