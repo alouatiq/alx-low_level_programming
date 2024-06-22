@@ -21,5 +21,5 @@ letter++;
 
 putchar('\n'); /* Print a new line after the alphabets */
 
-return 0;
+return (0);
 }
