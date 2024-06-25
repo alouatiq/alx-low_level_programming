@@ -7,30 +7,33 @@
  */
 int main(void)
 {
-  int count;
-  unsigned long x, y, fib;
+int count;
+unsigned long x, y, fib;
 
-  x = 1;  /* First Fibonacci number */
-  y = 2;  /* Second Fibonacci number */
+x = 1;  /* First Fibonacci number */
+y = 2;  /* Second Fibonacci number */
 
-  /* Print the first two numbers (1 and 2) */
-  printf("%lu, %lu, ", x, y);
+/* Print the first Fibonacci number */
+printf("%lu, ", x);
 
-  /* Calculate and print the next 96 Fibonacci numbers */
-  for (count = 3; count <= 98; count++)
-    {
-      fib = x + y;  /* Calculate next Fibonacci number */
-      printf("%lu", fib);
+/* Print the second Fibonacci number */
+printf("%lu, ", y);
 
-      if (count != 98)  /* Print comma and space for all but the last number */
-	printf(", ");
+/* Calculate and print the next 96 Fibonacci numbers */
+for (count = 3; count <= 98; count++)
+{
+fib = x + y;  /* Calculate next Fibonacci number */
+printf("%lu", fib);
 
-      /* Update x and y for the next iteration */
-      x = y;
-      y = fib;
-    }
+if (count != 98)  /* Print comma and space for all but the last number */
+printf(", ");
 
-  printf("\n");  /* New line after all numbers have been printed */
+/* Update x and y for the next iteration */
+x = y;
+y = fib;
+}
 
-  return (0);
+printf("\n");  /* New line after all numbers have been printed */
+
+return (0);
 }
