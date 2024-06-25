@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 /**
- * intcalculate_sum_of_even_fibonacci - Calculate sum of even Fibonacci numbers up to 4,000,000
+ * intcalculate_sum_of_even_fibonacci - Calculate sum of even
+ * Fibonacci numbers up to 4,000,000
  */
 void intcalculate_sum_of_even_fibonacci(void)
 {
