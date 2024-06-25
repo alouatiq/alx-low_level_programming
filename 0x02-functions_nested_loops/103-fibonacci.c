@@ -1,43 +1,26 @@
 #include <stdio.h>
-
+#include "main.h"
 /**
- * main - Prints the sum of even Fibonacci numbers below 4,000,000
+ * main - Entry point of the program
  *
- * Return: Always 0
+ * Return: Always 0 (Success)
  */
-int main(void)
+void intcalculate_sum_of_even_fibonacci (void)
 {
-unsigned long a, b, c, sum;
-int i; // Declare loop variable outside of the loop
+long int i, x = 1, y = 2, sum = 0, tSum = 0;
 
-a = 1; /* First Fibonacci number */
-b = 2; /* Second Fibonacci number */
-sum = 0; /* Initialize sum */
-
-/* Print the initial Fibonacci numbers 1 and 2 */
-printf("%lu, %lu", a, b);
-
-/* Start generating Fibonacci numbers from the third number */
-for (i = 3; i <= 98; i++)
+// Loop to calculate the Fibonacci sequence and sum even numbers
+for (i = 0; i < 49; i++) // Iterate 49 times to find the first 50 Fibonacci numbers
 {
-c = a + b; /* Calculate next Fibonacci number */
-
-/* Check if the Fibonacci number is even and add to sum */
-if (c % 2 == 0)
+if ((y % 2 == 0) && (y <= 4000000)) // Check if the current Fibonacci number (y) is even and not exceed 4,000,000
 {
-sum += c;
+tSum = tSum + y; // Add the even Fibonacci number to the total sum (tSum)
 }
-
-/* Print the Fibonacci number */
-printf(", %lu", c);
-
-/* Update values for next iteration */
-a = b;
-b = c;
+sum = x + y; // Calculate the next Fibonacci number
+x = y; // Update the previous Fibonacci number
+y = sum; // Update the current Fibonacci number
 }
+printf("%ld\n", tSum); // Print the total sum of even Fibonacci numbers
 
-/* Print the sum of even Fibonacci numbers */
-printf("\nSum of even Fibonacci numbers below 4,000,000: %lu\n", sum);
-
-return (0);
+return (0); // Return 0 to indicate successful execution
 }
