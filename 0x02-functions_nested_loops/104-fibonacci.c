@@ -1,28 +1,36 @@
 #include <stdio.h>
 
-int main() {
-int count = 2; // Start from the third number (index 2)
-long long a = 1, b = 2; // First two Fibonacci numbers, using long long to handle larger numbers
+/**
+ * main - Entry point
+ *
+ * Return: Always 0
+ */
+int main(void)
+{
+int count;
+unsigned long x, y, fib;
 
-// Print the first two Fibonacci numbers
-printf("%lld, %lld, ", a, b);
+x = 1;  /* First Fibonacci number */
+y = 2;  /* Second Fibonacci number */
 
-while (count < 104) { // We want to print 104 numbers in total
-long long next = a + b;
-printf("%lld", next);
+/* Print the first Fibonacci number */
+printf("%lu", x);
 
-// Print ", " if not the last number
-if (count != 103) {
-printf(", ");
-} else {
-printf("\n"); // Print new line at the end
+/* Print the second Fibonacci number */
+printf(", %lu", y);
+
+/* Calculate and print the next 96 Fibonacci numbers */
+for (count = 3; count <= 98; count++)
+{
+fib = x + y;  /* Calculate next Fibonacci number */
+printf(", %lu", fib);
+
+/* Update x and y for the next iteration */
+x = y;
+y = fib;
 }
 
-// Update variables for next iteration
-a = b;
-b = next;
-count++;
-}
+printf("\n");  /* New line after all numbers have been printed */
 
 return (0);
 }
