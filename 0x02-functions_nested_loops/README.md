@@ -1,0 +1,71 @@
+# 0x02. C - Functions, nested loops
+
+## Description
+This project contains various C programs that demonstrate the use of functions and nested loops. Each program corresponds to a task with specific requirements aimed at practicing different concepts in C programming.
+
+## Project Requirements
+- All programs are written in C.
+- Compiled on Ubuntu 20.04 LTS using gcc with the options `-Wall -Werror -Wextra -pedantic -std=gnu89`.
+- All files should end with a new line.
+- Code must follow the Betty style.
+- No more than 5 functions per file.
+- Use of the standard library is restricted; `_putchar` is allowed.
+- Prototypes of functions and `_putchar` should be in a header file named `main.h`.
+
+## Learning Objectives
+By the end of this project, you should be able to explain:
+- What are nested loops and how to use them
+- What is a function and how to use functions
+- The difference between declaration and definition of a function
+- What is a prototype
+- Scope of variables
+- What are the gcc flags `-Wall -Werror -pedantic -Wextra -std=gnu89`
+- How to use header files with `#include`
+
+## Tasks Overview
+1. **_putchar**
+   - Write a program that prints `_putchar`, followed by a new line.
+
+2. **print_alphabet**
+   - Function that prints the alphabet in lowercase.
+
+3. **print_alphabet_x10**
+   - Function that prints the alphabet 10 times.
+
+4. **_islower**
+   - Function that checks for lowercase characters.
+
+5. **_isalpha**
+   - Function that checks for alphabetic characters.
+
+6. **print_sign**
+   - Function that prints the sign of a number (`+`, `0`, `-`).
+
+7. **_abs**
+   - Function that computes the absolute value of an integer.
+
+8. **print_last_digit**
+   - Function that prints the last digit of a number.
+
+9. **jack_bauer**
+   - Function that prints every minute of the day from `00:00` to `23:59`.
+
+10. **times_table**
+    - Function that prints the 9 times table.
+
+11. **add**
+    - Function that adds two integers and returns the result.
+
+12. **print_to_98**
+    - Function that prints all natural numbers from `n` to `98`.
+
+13. **print_times_table**
+    - Function that prints the n times table, starting with `0`.
+
+## Files
+Each task corresponds to a specific file in the project directory:
+- `0-putchar.c` to `13-print_times_table.c`
+
+## Usage
+- Compile each program separately using gcc with the provided options.
+- Execute the compiled binary to see the output.
