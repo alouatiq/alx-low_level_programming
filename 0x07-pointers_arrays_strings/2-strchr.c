@@ -10,19 +10,13 @@
  */
 char *_strchr(char *s, char c)
 {
-while (*s)
+int index;
+
+for (index = 0; s[index] >= '\0'; index++)
 {
-if (c == *s)
-{
-return (s);
-}
-s++;
+if (s[index] == c)
+return (s + index);
 }
 
-  /* Check if c is the null terminator '\0' */
-if (!c)
-return (s);
-
-  /* If c is not found and not '\0', return NULL */
-return (NULL);
+return ('\0');
 }
