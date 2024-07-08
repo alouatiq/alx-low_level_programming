@@ -10,18 +10,19 @@
  */
 char *_strchr(char *s, char c)
 {
-  /* Iterate through each character in the string s */
-while (*s != '\0')
+while (*s)
 {
-if (*s == c)
+if (c == *s)
+{
 return (s);
+}
 s++;
 }
 
-  /* Check if the character to be located is the null terminator */
-if (c == '\0')
+  /* Check if c is the null terminator '\0' */
+if (!c)
 return (s);
 
-  /* If the character is not found, return NULL */
+  /* If c is not found and not '\0', return NULL */
 return (NULL);
 }
