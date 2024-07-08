@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * _strpbrk - Searches a string for any of a set of bytes.
@@ -9,14 +8,20 @@
  * Return: If a set is matched - a pointer to the matched byte.
  *         If no set is matched - NULL.
  */
-int main(void)
+char *_strpbrk(char *s, char *accept)
 {
+int index;
 
-char *s = "hello, world";
-char *f = "world";
-char *t;
+while (*s)
+{
+for (index = 0; accept[index]; index++)
+{
+if (*s == accept[index])
+return (s);
+}
 
-t = _strpbrk(s, f);
-printf("%s\n", t);
-return (0);
+s++;
+}
+
+return ('\0');
 }
