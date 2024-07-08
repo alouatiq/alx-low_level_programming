@@ -10,32 +10,29 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-char *h, *n;
+int index; // Declare variable to hold index for comparison
 
-  /* If needle is empty, return the haystack */
-if (*needle == '\0')
+if (*needle == 0) // If needle is an empty string, return haystack directly
 return (haystack);
 
-  /* Iterate through each character in haystack */
-while (*haystack)
+while (*haystack) // Loop through the haystack string
 {
-h = haystack;
-n = needle;
+index = 0; // Reset index to 0 for each iteration
 
-      /* Check if the substring matches */
-while (*h && *n && (*h == *n))
+if (haystack[index] == needle[index]) // If characters match at current position
 {
-h++;
-n++;
+do { // Start a do-while loop to check subsequent characters
+
+if (needle[index + 1] == '\0') // If end of needle string is reached
+return (haystack); // Return current position in haystack
+
+index++; // Move to next character in needle
+
+} while (haystack[index] == needle[index]); // Continue loop if characters match
 }
 
-      /* If we reached the end of needle, it means we found a match */
-if (*n == '\0')
-return (haystack);
-
-haystack++;
+haystack++; // Move to next character in haystack
 }
 
-  /* If no match is found, return NULL */
-return (NULL);
+return ('\0'); // Return NULL if substring is not found
 }
