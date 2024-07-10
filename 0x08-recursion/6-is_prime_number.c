@@ -3,22 +3,21 @@
  * _is_prime_helper - Helper function to check for prime number.
  * @n: The number to check.
  * @divisor: The current divisor to test.
- * 
  * Return: 1 if n is prime, 0 otherwise.
  */
 int _is_prime_helper(int n, int divisor)
 {
 if (n <= 1)
 {
-return 0;
+return (0);
 }
 if (divisor * divisor > n)
 {
-return 1;
+return (1);
 }
 if (n % divisor == 0)
 {
-return 0;
+return (0);
 }
 return _is_prime_helper(n, divisor + 1);
 }
