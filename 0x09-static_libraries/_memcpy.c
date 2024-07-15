@@ -2,6 +2,9 @@
 
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-  /* Implementation of _memcpy */
-  return dest;
+    char *ptr = dest;
+
+    while (n--)
+        *dest++ = *src++;
+    return (ptr);
 }

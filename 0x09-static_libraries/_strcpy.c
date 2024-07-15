@@ -1,7 +1,11 @@
 #include "main.h"
 
-int _strcpy(char *dest, char *src)
+char *_strcpy(char *dest, char *src)
 {
-    // TODO: Implement this function
-    return 0;
+    char *ptr = dest;
+
+    while (*src)
+        *dest++ = *src++;
+    *dest = '\0';
+    return (ptr);
 }

@@ -1,7 +1,8 @@
 #include "main.h"
 
-int _puts(char *s)
+void _puts(char *s)
 {
-    // TODO: Implement this function
-    return 0;
+    while (*s)
+        _putchar(*s++);
+    _putchar('\n');
 }

@@ -2,6 +2,5 @@
 
 int _isupper(int c)
 {
-    // TODO: Implement this function
-    return 0;
+    return (c >= 'A' && c <= 'Z');
 }

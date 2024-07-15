@@ -2,6 +2,5 @@
 
 int _islower(int c)
 {
-    // TODO: Implement this function
-    return 0;
+    return (c >= 'a' && c <= 'z');
 }

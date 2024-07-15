@@ -1,7 +1,19 @@
+#include <stddef.h>
 #include "main.h"
+#include <stddef.h>
 
-int _strpbrk(char *s, char *accept)
+char *_strpbrk(char *s, char *accept)
 {
-    // TODO: Implement this function
-    return 0;
+  char *ptr;
+
+  while (*s)
+    {
+      for (ptr = accept; *ptr; ptr++)
+	{
+	  if (*s == *ptr)
+	    return (s);
+	}
+      s++;
+    }
+  return (NULL);
 }

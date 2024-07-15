@@ -1,7 +1,7 @@
 #include "main.h"
+#include <unistd.h>
 
 int _putchar(char c)
 {
-    // TODO: Implement this function
-    return 0;
+    return write(1, &c, 1);
 }

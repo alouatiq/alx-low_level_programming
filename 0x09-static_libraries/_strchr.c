@@ -1,7 +1,14 @@
+#include <stddef.h>
 #include "main.h"
+#include <stddef.h>
 
-int _strchr(char *s, char c)
+char *_strchr(char *s, char c)
 {
-    // TODO: Implement this function
-    return 0;
+  while (*s)
+    {
+      if (*s == c)
+	return (s);
+      s++;
+    }
+  return (c == '\0' ? s : NULL);
 }

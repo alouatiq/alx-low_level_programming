@@ -2,6 +2,5 @@
 
 int _isalpha(int c)
 {
-    // TODO: Implement this function
-    return 0;
+    return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }

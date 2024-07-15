@@ -2,6 +2,5 @@
 
 int _isdigit(int c)
 {
-    // TODO: Implement this function
-    return 0;
+    return (c >= '0' && c <= '9');
 }
