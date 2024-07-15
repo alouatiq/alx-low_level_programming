@@ -2,8 +2,10 @@
 #include <stdio.h>
 
 /**
- * count_words - Helper function to count the number of words in a string
+ * count_words - Helper function to count the number
+ *  of words in a string
  * @str: The string to evaluate
+ *
  * Return: Number of words
  */
 int count_words(char *str)
@@ -24,7 +26,7 @@ count++;
 str++;
 }
 
-return count;
+return (count);
 }
 
 /**
@@ -39,17 +41,17 @@ char **words, *tmp;
 int i, k = 0, len = 0, words_count, c = 0, start, end;
 
 if (str == NULL || *str == '\0')
-return NULL;
+return (NULL);
 
 while (*(str + len))
 len++;
 words_count = count_words(str);
 if (words_count == 0)
-return NULL;
+return (NULL);
 
 words = (char **) malloc((words_count + 1) * sizeof(char *));
 if (words == NULL)
-return NULL;
+return (NULL);
 
 for (i = 0; i <= len; i++)
 {
@@ -60,7 +62,7 @@ if (c)
 end = i;
 tmp = (char *) malloc((c + 1) * sizeof(char));
 if (tmp == NULL)
-return NULL;
+return (NULL);
 while (start < end)
 *tmp++ = str[start++];
 *tmp = '\0';
@@ -73,5 +75,5 @@ start = i;
 }
 words[k] = NULL;
 
-return words;
+return (words);
 }
