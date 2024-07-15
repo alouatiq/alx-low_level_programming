@@ -4,7 +4,9 @@
  * str_concat - Concatenates two strings.
  * @s1: The first string.
  * @s2: The second string.
- * Return: A pointer to the newly allocated space in memory containing s1 followed by s2, and null terminated, or NULL if it fails.
+ * Return: A pointer to the newly allocated space in memory
+ *  containing s1 followed by s2, and null terminated, or
+ *  NULL if it fails.
  */
 char *str_concat(char *s1, char *s2)
 {
