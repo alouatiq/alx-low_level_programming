@@ -1,48 +1,50 @@
-# ALX Low-Level Programming
+# 0x0C. More malloc, free
 
-![C Programming](https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png)
+This project focuses on advanced memory management techniques in C, specifically using dynamic memory allocation functions such as `malloc`, `calloc`, and `realloc`. You will learn how to allocate, deallocate, and manage memory efficiently, as well as manipulate strings and arrays in dynamically allocated memory.
 
-## Introduction
+## Project Overview
 
-Hello, World! Welcome to my GitHub repository, **alx-low_level_programming**. This repository is dedicated to the low-level programming projects as part of the ALX Software Engineering program. Here, you'll find various projects and exercises that delve into the fundamentals of C programming, offering a hands-on approach to learning this powerful language.
+Dynamic memory allocation is a powerful feature in C that allows programs to request memory from the operating system at runtime. This project covers the following key concepts:
 
-## Why C Programming?
+- **malloc:** Allocates a specified number of bytes and returns a pointer to the allocated memory.
+- **calloc:** Allocates memory for an array of elements, initializes them to zero, and returns a pointer to the allocated memory.
+- **realloc:** Changes the size of a previously allocated memory block and returns a pointer to the new block.
+- **String manipulation:** Concatenating and copying strings using dynamically allocated memory.
+- **Error handling:** Properly handling memory allocation failures.
 
-C is often called the mother of all programming languages, and for good reason. Developed in the early 1970s by Dennis Ritchie at Bell Labs, C has influenced many modern languages like C++, C#, and even Python. Its efficiency, flexibility, and close-to-the-metal capabilities make it an ideal choice for system programming, game development, and applications requiring real-time processing.
+## Table of Contents
 
-### Key Figures in C Programming
+- [Tasks](#tasks)
+  - [Task 0: Trust no one](#task-0-trust-no-one)
+    - [Task 1: string_nconcat](#task-1-string_nconcat)
+      - [Task 2: _calloc](#task-2-_calloc)
+        - [Task 3: array_range](#task-3-array_range)
+	  - [Task 4: _realloc](#task-4-_realloc)
+	    - [Task 5: We must accept finite disappointment, but never lose infinite hope](#task-5-we-must-accept-finite-disappointment-but-never-lose-infinite-hope)
 
-- **Dennis Ritchie:** Co-creator of Unix and the C programming language.
-- **Brian Kernighan:** Co-author of "The C Programming Language" book, also known as K&R.
-- **Linus Torvalds:** Creator of Linux, a massive advocate for C programming.
+## Tasks
 
-## Project Objectives
+### Task 0: Trust no one
 
-By the end of this project, you will:
+Write a function that allocates memory using `malloc`.
 
-- Understand why C programming is awesome.
-- Know the history and key figures in C programming.
-- Be able to explain the C compilation process and the role of the `gcc` compiler.
-- Write and compile C programs using `gcc`.
-- Use `printf`, `puts`, and `putchar` to print text.
-- Utilize the `sizeof` operator to determine the size of data types.
-- Follow and apply the Betty coding style.
-- Manage headers and libraries in your C programs effectively.
+- **Prototype:** `void *malloc_checked(unsigned int b);`
+- **Returns:** a pointer to the allocated memory.
+- If `malloc` fails, the `malloc_checked` function should cause normal process termination with a status value of 98.
 
-## Getting Started
+**File:** `0-malloc_checked.c`
 
-### Prerequisites
+```c
+#include <stdlib.h>
+#include "main.h"
 
-To get started with the project, you need the following:
-
-- A Unix-like operating system (Ubuntu 20.04 LTS recommended)
-- Basic understanding of terminal commands
-- Text editor (e.g., `vi`, `vim`, `emacs`)
-
-### Installation
-
-1. **Clone the Repository:**
-   ```bash
-      git clone https://github.com/yourusername/alx-low_level_programming.git
-         cd alx-low_level_programming
-	 
+void *malloc_checked(unsigned int b)
+{
+    void *ptr = malloc(b);
+        if (ptr == NULL)
+	    {
+	            exit(98);
+		        }
+			    return ptr;
+			    }
+			    
