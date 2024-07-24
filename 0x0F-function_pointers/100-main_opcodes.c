@@ -9,33 +9,33 @@
  */
 int main(int argc, char *argv[])
 {
-  int bytes, i;
-  unsigned char *func_ptr;
+int bytes, i;
+unsigned char *func_ptr;
 
-  if (argc != 2)
-    {
-      printf("Error\n");
-      exit(1);
-    }
+if (argc != 2)
+{
+printf("Error\n");
+exit(1);
+}
 
-  bytes = atoi(argv[1]);
+bytes = atoi(argv[1]);
 
-  if (bytes < 0)
-    {
-      printf("Error\n");
-      exit(2);
-    }
+if (bytes < 0)
+{
+printf("Error\n");
+exit(2);
+}
 
-  func_ptr = (unsigned char *)main;
+func_ptr = (unsigned char *)main;
 
-  for (i = 0; i < bytes; i++)
-    {
-      printf("%02x", func_ptr[i]);
-      if (i < bytes - 1)
-	printf(" ");
-    }
+for (i = 0; i < bytes; i++)
+{
+printf("%02x", func_ptr[i]);
+if (i < bytes - 1)
+printf(" ");
+}
 
-  printf("\n");
+printf("\n");
 
-  return (0);
+return (0);
 }
