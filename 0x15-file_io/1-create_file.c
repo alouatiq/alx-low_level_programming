@@ -1,7 +1,7 @@
+#include "main.h"
 #include <fcntl.h>
 #include <unistd.h>
 #include <sys/stat.h>
-#include "main.h"
 
 /**
  * create_file - Creates a file and writes a string to it.
