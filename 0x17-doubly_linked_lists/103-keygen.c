@@ -9,7 +9,8 @@ char *generate_key(char *username)
 
 	username_len = strlen(username);
 
-	/* This is a placeholder algorithm. Replace with the actual algorithm after analyzing crackme5 */
+	/* This is a placeholder algorithm. Replace with the
+ 	* actual algorithm after analyzing crackme5 */
 	key[0] = username[0] + username_len;
 	key[1] = 'A' + (username_len % 26);
 	key[2] = '0' + (username_len % 10);
