@@ -12,6 +12,7 @@ int is_palindrome(int n) {
 int main() {
     int largest_palindrome = 0;
     int i, j;
+    FILE *file;
 
     for (i = 999; i >= 100; i--) {
         for (j = i; j >= 100; j--) {
@@ -24,7 +25,7 @@ int main() {
 
     printf("%d\n", largest_palindrome);
 
-    FILE *file = fopen("102-result", "w");
+    file = fopen("102-result", "w");
     if (file != NULL) {
         fprintf(file, "%d", largest_palindrome);
         fclose(file);
