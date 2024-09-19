@@ -5,11 +5,11 @@
 char *generate_key(char *username)
 {
     static char key[7];
-    int i, username_len;
+    int username_len;
 
     username_len = strlen(username);
 
-    // This is a placeholder algorithm. Replace with the actual algorithm after analyzing crackme5
+    /* This is a placeholder algorithm. Replace with the actual algorithm after analyzing crackme5 */
     key[0] = username[0] + username_len;
     key[1] = 'A' + (username_len % 26);
     key[2] = '0' + (username_len % 10);
@@ -18,7 +18,7 @@ char *generate_key(char *username)
     key[5] = username[0] - username_len;
     key[6] = '\0';
 
-    return key;
+    return (key);
 }
 
 int main(int argc, char *argv[])
@@ -26,9 +26,9 @@ int main(int argc, char *argv[])
     if (argc != 2)
     {
         fprintf(stderr, "Usage: %s username\n", argv[0]);
-        return 1;
+        return (1);
     }
 
     printf("%s\n", generate_key(argv[1]));
-    return 0;
+    return (0);
 }
