@@ -4,28 +4,35 @@
 
 char *generate_key(char *username)
 {
-	/* This function should implement the key generation algorithm */
-	/* based on the analysis of crackme5 */
-	/* For now, it's just a placeholder */
-	char *key = malloc(strlen(username) + 1);
-	if (key == NULL)
-		return (NULL);
-	strcpy(key, username);
-	/* Modify key based on the crackme5 algorithm */
-	return (key);
+    char *key;
+    /* Your key generation algorithm here */
+    key = malloc(strlen(username) + 1);
+    if (key == NULL)
+        return NULL;
+    strcpy(key, username);
+    /* Modify key based on the crackme5 algorithm */
+    return key;
 }
 
 int main(int argc, char *argv[])
 {
-	if (argc != 2)
-	{
-		fprintf(stderr, "Usage: %s username\n", argv[0]);
-		return (1);
-	}
+    char *key;
 
-	char *key = generate_key(argv[1]);
-	printf("%s\n", key);
-	free(key);
+    if (argc != 2)
+    {
+        fprintf(stderr, "Usage: %s username\n", argv[0]);
+        return 1;
+    }
 
-	return (0);
+    key = generate_key(argv[1]);
+    if (key == NULL)
+    {
+        fprintf(stderr, "Failed to generate key\n");
+        return 1;
+    }
+
+    printf("%s\n", key);
+    free(key);
+
+    return 0;
 }
