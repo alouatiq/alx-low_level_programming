@@ -1,68 +1,87 @@
-# 0x18. C - Dynamic libraries
+# Dynamic Libraries in C
 
-This project focuses on creating and using dynamic libraries in C. It includes tasks to create a dynamic library, write a script to create a dynamic library, call C functions from Python, and an advanced task involving code injection.
+This project demonstrates the creation and usage of dynamic libraries in C. It includes C functions that are compiled into dynamic libraries, a script to automate the process, and Python integration for calling C functions.
 
 ## Files
 
-- `main.h`: Header file containing all function prototypes.
-- `libdynamic.so`: Dynamic library containing all required functions.
-- `1-create_dynamic_lib.sh`: Script to create liball.so from all .c files in the current directory.
-- `100-operations.so`: Dynamic library for C functions callable from Python.
-- `101-make_me_win.sh`: Shell script for code injection task (advanced).
+- **`main.h`**: Header file with the prototypes of the functions.
+- **`1-create_dynamic_lib.sh`**: Bash script to compile and generate a dynamic library from `.c` source files.
+- **`libdynamic.so`**: The dynamic library containing various string and memory functions.
+- **`100-operations.so`**: Dynamic library callable from Python.
+- **`make-me-win.sh`**: Script to preload a library and manipulate the execution of a specific program.
 
-## Usage
+## Directories
 
-To compile the dynamic library:
+- **`src/`**: Contains the C source files for the dynamic libraries.
+- **`tests/`**: Contains test files, both for C and Python.
+- **`build/`**: Stores the compiled dynamic libraries and executables.
+
+## How to Run
+
+1. **Create the dynamic library**:
+   ```bash
+   ./1-create_dynamic_lib.sh
+   ```
+2. **Run the C test**:
+
+```bash
+gcc -Lbuild -o build/test_len tests/0-main.c -ldynamic
+export LD_LIBRARY_PATH=build:$LD_LIBRARY_PATH
+./build/test_len
 ```
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -fPIC -c *.c
-gcc -shared -o libdynamic.so *.o
+3. **Run the Python test**:
+
+```bash
+python3 tests/100-tests.py
 ```
 
-To use the library:
-```
-export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
+4. **Advanced Task**:
+
+```bash
+./make-me-win.sh
 ```
 
 ## Stracture
 ```
 0x18-dynamic_libraries/
 │
-├── README.md                 # Project description and instructions
+├── README.md                             # Project description and instructions
+├── main.h                                # Header file with function prototypes
+├── libdynamic.so                         # Compiled dynamic library (will be generated)
+├── liball.so                             # Dynamic library created by the script (will be generated)
+├── 1-create_dynamic_lib.sh               # Script to create liball.so from .c files
+├── make-me-win.sh                        # Script for advanced task using LD_PRELOAD
+├── 100-operations.so                     # Dynamic library for C functions callable from Python
 │
-├── main.h                    # Header file with all function prototypes
+├── src/                                  # Source files for dynamic libraries
+│   ├── _putchar.c
+│   ├── _islower.c
+│   ├── _isalpha.c
+│   ├── _abs.c
+│   ├── _isupper.c
+│   ├── _isdigit.c
+│   ├── _strlen.c
+│   ├── _puts.c
+│   ├── _strcpy.c
+│   ├── _atoi.c
+│   ├── _strcat.c
+│   ├── _strncat.c
+│   ├── _strncpy.c
+│   ├── _strcmp.c
+│   ├── _memset.c
+│   ├── _memcpy.c
+│   ├── _strchr.c
+│   ├── _strspn.c
+│   ├── _strpbrk.c
+│   ├── _strstr.c
+│   └── 100-operations.c                 # C source for Python callable functions
 │
-├── libdynamic.so             # Dynamic library containing all required functions
+├── tests/                                # Test files for the dynamic libraries
+│   ├── 0-main.c                         # Test for the dynamic library (checks _strlen)
+│   └── 100-tests.py                     # Python test script for operations (add, sub, etc.)
 │
-├── 1-create_dynamic_lib.sh   # Script to create liball.so
-│
-├── 100-operations.so         # Dynamic library for C functions callable from Python
-│
-├── 101-make_me_win.sh        # Shell script for code injection task (advanced)
-│
-├── liball.so                 # Dynamic library created by 1-create_dynamic_lib.sh (not in initial repo)
-│
-│   # Source files for libdynamic.so (implementation of functions):
-├── _putchar.c
-├── _islower.c
-├── _isalpha.c
-├── _abs.c
-├── _isupper.c
-├── _isdigit.c
-├── _strlen.c
-├── _puts.c
-├── _strcpy.c
-├── _atoi.c
-├── _strcat.c
-├── _strncat.c
-├── _strncpy.c
-├── _strcmp.c
-├── _memset.c
-├── _memcpy.c
-├── _strchr.c
-├── _strspn.c
-├── _strpbrk.c
-├── _strstr.c
-│
-│   # Source file for 100-operations.so:
-└── 100-operations.c          # Contains add, sub, mul, div, mod functions
+└── build/                                # Compiled libraries and binaries (generated)
+    ├── libdynamic.so                    # Dynamic library for C functions
+    ├── liball.so                        # Dynamic library generated by the script
+    └── test_len                         # Executable for the C test (0-main.c)
 ```
