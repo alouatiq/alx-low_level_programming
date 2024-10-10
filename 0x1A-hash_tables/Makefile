@@ -10,9 +10,9 @@ TARGET = hash_tables
 # Default target to build the executable
 all: $(TARGET)
 
-# Build the main executable
-$(TARGET): $(OBJ)
-	$(CC) $(CFLAGS) -o $(TARGET) $(OBJ)
+# Build the main executable using a test file
+$(TARGET): $(OBJ) tests/0-main.c
+	$(CC) $(CFLAGS) -o $(TARGET) $(OBJ) tests/0-main.c
 
 # Compile each .c file into an object file (.o)
 %.o: %.c hash_tables.h
