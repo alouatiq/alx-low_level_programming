@@ -40,7 +40,8 @@ void print_elf_header(const Elf64_Ehdr *header)
 		header->e_ident[EI_DATA] == ELFDATA2MSB ? "2's complement, big endian" : "Invalid data encoding");
 
 	/* Version */
-	printf("  Version:                           %d\n", header->e_ident[EI_VERSION]);
+	printf("  Version:                           %d (current)\n",
+		header->e_ident[EI_VERSION]);
 
 	/* OS/ABI */
 	printf("  OS/ABI:                            %s\n",
@@ -50,7 +51,8 @@ void print_elf_header(const Elf64_Ehdr *header)
 		"<unknown>");
 
 	/* ABI Version */
-	printf("  ABI Version:                       %d\n", header->e_ident[EI_ABIVERSION]);
+	printf("  ABI Version:                       %d\n",
+		header->e_ident[EI_ABIVERSION]);
 
 	/* Type */
 	printf("  Type:                              %s\n",
@@ -59,7 +61,8 @@ void print_elf_header(const Elf64_Ehdr *header)
 		header->e_type == ET_REL ? "REL (Relocatable file)" : "Unknown");
 
 	/* Entry point address */
-	printf("  Entry point address:               0x%lx\n", (unsigned long)header->e_entry);
+	printf("  Entry point address:               0x%lx\n",
+		(unsigned long)(header->e_entry & 0xffffffff));
 }
 
 /**
