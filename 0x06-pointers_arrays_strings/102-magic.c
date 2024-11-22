@@ -9,13 +9,18 @@ int main(void)
     a[2] = 1024;
     p = &n;
 
-    // Debugging: Check memory layout
-    printf("Address of p: %p\n", (void *)p);
-    printf("Address of a[0]: %p\n", (void *)&a[0]);
-    printf("Address of a[2]: %p\n", (void *)&a[2]);
-
+    /*
+     * write your line of code here...
+     * Remember:
+     * - you are not allowed to use a
+     * - you are not allowed to modify p
+     * - only one statement
+     * - you are not allowed to code
+     *   anything else than this line of code
+     */
     *(p + ((char *)&a[2] - (char *)p) / sizeof(int)) = 98;
 
+    /* ...so that this prints 98\n */
     printf("a[2] = %d\n", a[2]);
     return (0);
 }
