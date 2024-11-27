@@ -6,22 +6,26 @@ RM = rm -f
 
 .PHONY: all clean oclean fclean re
 
+# Ensure that m.h is included as a dependency
 all: $(NAME)
 
 $(NAME): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
+# Rule to remove all temporary files
 clean:
 	$(RM) *~
 
+# Rule to remove object files
 oclean:
 	$(RM) main.o school.o
 
+# Rule to remove everything
 fclean: clean oclean
 	$(RM) $(NAME)
 
+# Force rebuild
 re: fclean all
 
-# Ensure header dependency
 main.o: m.h
 school.o: m.h
