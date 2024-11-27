@@ -1,29 +1,27 @@
-NAME = school
-SRC = main.c school.c
 CC = gcc
+SRC = main.c school.c
+NAME = school
 CFLAGS = -Wall -Werror -Wextra -pedantic
 RM = rm -f
 
-# Rule to build the executable
+.PHONY: all clean oclean fclean re
+
 all: $(NAME)
 
 $(NAME): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
-# Rule to remove temporary files
 clean:
 	$(RM) *~
 
-# Rule to remove object files
 oclean:
 	$(RM) main.o school.o
 
-# Rule to clean everything
 fclean: clean oclean
 	$(RM) $(NAME)
 
-# Rule to force a complete rebuild
 re: fclean all
 
+# Ensure header dependency
 main.o: m.h
 school.o: m.h
