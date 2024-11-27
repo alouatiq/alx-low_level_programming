@@ -1,29 +1,30 @@
-CC = gcc
-SRC = main.c school.c
-OBJ = $(SRC:.c=.o)
 NAME = school
-RM = rm -f
+SRC = main.c school.c
+CC = gcc
 CFLAGS = -Wall -Werror -Wextra -pedantic
+RM = rm -f
 
-.PHONY: all clean fclean oclean re
-
+# Rule to build the executable
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) $(OBJ) -o $@
+$(NAME): $(SRC)
+	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
-$(OBJ): m.h
-
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
+# Rule to remove temporary files
 clean:
-	$(RM) *~ \#*\# .\#*
+	$(RM) *~
 
+# Rule to remove object files
 oclean:
-	$(RM) $(OBJ)
+	$(RM) main.o school.o
 
+# Rule to clean everything
 fclean: clean oclean
 	$(RM) $(NAME)
 
+# Rule to force a complete rebuild
 re: fclean all
+
+# The header file
+main.o: m.h
+school.o: m.h
