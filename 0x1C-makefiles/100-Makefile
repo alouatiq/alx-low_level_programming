@@ -1,31 +1,29 @@
 CC = gcc
 SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
 NAME = school
-CFLAGS = -Wall -Werror -Wextra -pedantic
 RM = rm -f
+CFLAGS = -Wall -Werror -Wextra -pedantic
 
-.PHONY: all clean oclean fclean re
+.PHONY: all clean fclean oclean re
 
-# Ensure that m.h is included as a dependency
 all: $(NAME)
 
-$(NAME): $(SRC)
-	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -o $@
 
-# Rule to remove all temporary files
+$(OBJ): m.h
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
 clean:
-	$(RM) *~
+	$(RM) *~ \#*\# .\#*
 
-# Rule to remove object files
 oclean:
-	$(RM) main.o school.o
+	$(RM) $(OBJ)
 
-# Rule to remove everything
 fclean: clean oclean
 	$(RM) $(NAME)
 
-# Force rebuild
 re: fclean all
-
-main.o: m.h
-school.o: m.h
