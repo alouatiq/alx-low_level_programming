@@ -3,7 +3,7 @@
 
 /**
 	* advanced_binary_recursive - Recursive helper
- 	* function for advanced binary search.
+	* function for advanced binary search.
 	* @array: Pointer to the first element of the array.
 	* @left: Left index of the subarray.
 	* @right: Right index of the subarray.
