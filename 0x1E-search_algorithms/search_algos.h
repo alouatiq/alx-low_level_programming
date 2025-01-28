@@ -4,31 +4,31 @@
 #include <stddef.h>
 
 /**
- * struct listint_s - singly linked list
- * @n: Integer value
- * @index: Index of the node
- * @next: Pointer to the next node
- */
+	* struct listint_s - singly linked list
+	* @n: Integer value
+	* @index: Index of the node
+	* @next: Pointer to the next node
+	*/
 typedef struct listint_s
 {
-    int n;
-    size_t index;
-    struct listint_s *next;
+	int n;
+	size_t index;
+	struct listint_s *next;
 } listint_t;
 
 /**
- * struct skiplist_s - singly linked list with an express lane
- * @n: Integer value
- * @index: Index of the node
- * @next: Pointer to the next node
- * @express: Pointer to the express lane node
- */
+	* struct skiplist_s - singly linked list with an express lane
+	* @n: Integer value
+	* @index: Index of the node
+	* @next: Pointer to the next node
+	* @express: Pointer to the express lane node
+	*/
 typedef struct skiplist_s
 {
-    int n;
-    size_t index;
-    struct skiplist_s *next;
-    struct skiplist_s *express;
+	int n;
+	size_t index;
+	struct skiplist_s *next;
+	struct skiplist_s *express;
 } skiplist_t;
 
 /* Function prototypes */
